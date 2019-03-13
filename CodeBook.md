@@ -82,6 +82,7 @@ graph LR
 A[features.txt] -- read.table --> AA(features)
 
 ```
+![Flowsheet1](https://github.com/Mitridathes/Getting-and-Cleaning-Data-Course-Project/blob/master/images/flowsheet1.PNG?raw=true)
 
  - Reads the data coming from the "test" set of volunteers and joins it into the same table: 
 ```mermaid
@@ -93,6 +94,8 @@ BB -- cbind --> E(test_data)
 CC -- cbind --> E
 AA -- cbind --> E
 ```
+![Flowsheet2](https://github.com/Mitridathes/Getting-and-Cleaning-Data-Course-Project/blob/master/images/flowsheet2.PNG?raw=true)
+
  - Every variable is renamed and we get a table with this header where "...features..." resumes every feature.
  
 | subject | activity | ..features..|
@@ -109,6 +112,8 @@ BB -- cbind --> E(training_data)
 CC -- cbind --> E
 AA -- cbind --> E
 ```
+![Flowsheet3](https://github.com/Mitridathes/Getting-and-Cleaning-Data-Course-Project/blob/master/images/flowsheet3.PNG?raw=true)
+
 ### Joining "training" and "test" data sets
  Before joining both tata tables is necessary to create a new variable that differentiates wether the data comes from "test" or "training":
 
@@ -123,6 +128,8 @@ A(test_data)--function call-->C((rbind))
 B(training_data)--function call-->C
 C-->D(merged_data)
 ```
+![Flowsheet4](https://github.com/Mitridathes/Getting-and-Cleaning-Data-Course-Project/blob/master/images/flowsheet4.PNG?raw=true)
+
 Now we get a data table with this shape:
 
 | subject | activity | ..features.. | set |
