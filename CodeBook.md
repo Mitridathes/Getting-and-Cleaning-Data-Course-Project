@@ -130,3 +130,10 @@ Now we get a data table with this shape:
 |  |  |  | 
 | 1 | 3 || ..0.82654.. || training
 ### Tidying data
+```mermaid
+graph LR
+A[Square Rect] -- Link text --> B((Circle))
+A --> C(Round Rect)
+B --> D{Rhombus}
+C --> D
+```
