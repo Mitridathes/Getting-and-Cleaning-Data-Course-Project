@@ -77,8 +77,7 @@ What that script does is:
 ### Reading the data
 As it was said before, the dataset is divided into different <code>.txt</code> files. 
  - Reads `features.txt` which has the name of every variable measured. It will be considered as the `colNames()` of `X_test.txt` and `X_train.txt`.
-```
-mermaid
+```mermaid
 graph LR
 A[features.txt] -- read.table --> AA(features)
 
