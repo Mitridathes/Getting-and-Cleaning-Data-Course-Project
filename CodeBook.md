@@ -6,12 +6,12 @@
 | set | training | set of volunteers selected for training data |
 ||test| set of volunteers selected for test data |
 | subject | "any integer [1 - 30]" | volunteer ID |
-| activity | LAYING | laying | 
-| | SITTING | sitting | 
-| | STANDING | standing | 
-| | WALKING | walking | 
-| | WALKING DOWNSTAIRS | walking downstairs | 
-| | WALKING UPSTAIRS | walking upstairs |
+| activity | laying| laying | 
+| | sitting | sitting | 
+| | standing | standing | 
+| | walking  | walking | 
+| | walking downstairs | walking downstairs | 
+| | walking upstairs | walking upstairs |
 | feature | fBodyAccFreqX | frequency domain signal from accelerometer 
 | | fBodyAccFreqY | frequency domain body signal from accelerometer
 | | fBodyAccFreqZ | frequency domain body signal from accelerometer
@@ -128,3 +128,34 @@ Now we get a data table with this shape:
 |--|--|--|--|
 | 2 | 1 | ..-0.92354.. | test |
 | 1 | 3 | ..0.81562.. | training
+
+### Tidying data
+
+ - First thing the script does in order to get a tidy data set is eliminating every and **"-", "()"** marks using regex: "-|\\()",
+
+There are **values as columns** in the data set:
+Taking a look at the data set it could be said that there are only 4 variables, although the number of columns us much bigger. Every feature name could be just the value of a variable called "feature" and it's value could be another variable called "measure".
+
+ - Before gathering all this data using the `tidyr package` this script creates a **new variable** to **count the number of observations** each subject has in every activity. This is created with a for loop.
+ - With this new column the dataset looks like this:
+
+| subject | activity | ..features.. | set | observation |
+|--|--|--|--|--|
+| 1 | 1 | ..-0.92354.. | test | 1 |
+| 1 | 1 | ..-0.81562.. | test |2 |
+
+This part is important in order to be able to identify the observation to which any feature corresponds once all the features are gathered.
+
+ - Next step to get tidy data is changing the values in activity by their **names** in the `activity_labels.txt` file in **lowercases**.
+
+| subject | activity | ..features.. | set | observation |
+|--|--|--|--|--|
+| 1 | walking | ..-0.92354.. | test | 1 |
+| 1 | walking | ..-0.81562.. | test |2 |
+
+ - Gathering every "features" variables into just 2 columns called "feature" and "measure". For this step is necessary the use of tydr package.
+
+| subject | activity | set | observation |  feature|measure|
+|--|--|--|--|--|--|--|
+| 1 | walking | test | 1 | fAccmean()-X | -0.92354
+| 1 | walking | test | 2 |fAccmean()-X | -0.81562
