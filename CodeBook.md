@@ -99,7 +99,7 @@ AA -- cbind --> E
 
 | subject | activity || ..features..|
 |--|--|--|--|--|
-| 2 | 1 || ..0.92354..
+| 2 | 1 || ..0.92354.. |
  - The same is done with the training data set:
 ```mermaid
 graph LR
@@ -113,9 +113,9 @@ AA -- cbind --> E
 ### Joining "training" and "test" data sets
  Before joining both tata tables is necessary to create a new variable that differentiates wether the data comes from "test" or "training":
 
-| subject | activity || ..features.. || set
+| subject | activity || ..features.. || set |
 |--|--|--|--|--|--|
-| 2 | 1 || ..-0.92354.. || test
+| 2 | 1 || ..-0.92354.. || test |
 Once `test_data` and `training_data` have the new set column indicating where the data belongs we can join them:
 ```mermaid
 graph LR
@@ -124,11 +124,11 @@ B(training_data)--function call-->C
 C-->D(merged_data)
 ```
 Now we get a data table with this shape:
-| subject | activity || ..features.. || set
+| subject | activity || ..features.. || set |
 |--|--|--|--|--|--|
-| 2 | 1 || ..-0.92354.. || test
+| 2 | 1 || ..-0.92354.. || test |
 |  |  |  | 
-| 1 | 3 || ..0.82654.. || training
+| 1 | 3 || ..0.82654.. || training |
 ### Tidying data
 ```mermaid
 graph LR
