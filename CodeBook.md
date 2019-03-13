@@ -157,5 +157,5 @@ This part is important in order to be able to identify the observation to which 
 
 | subject | activity | set | observation |  feature | measure |
 |--|--|--|--|--|--|
-| 1 | walking | test | 1 | fAccmean()-X | -0.92354 |
-| 1 | walking | test | 2 | fAccmean()-X | -0.81562 |
+| 1 | walking | test | 1 | fAccmeanX | -0.92354 |
+| 1 | walking | test | 2 | fAccmeanX | -0.81562 |
