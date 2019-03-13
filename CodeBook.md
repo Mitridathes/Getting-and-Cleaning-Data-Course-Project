@@ -197,6 +197,6 @@ The assignment goal was to  create a second, independent tidy data set with the 
 It was solving just using `dplyr::summarise` returning a result like this:
 
 | subject | activity | set | feature | measuretype | average|
-|--|--|--|--|--|--|--|
+|--|--|--|--|--|--|
 | 1 | walking | test | fBodyAccJerkX | -0.82354 | mean |
 | 1 | walking | test | fBodyAccJerkX | -0.91562 | standarddeviation |
