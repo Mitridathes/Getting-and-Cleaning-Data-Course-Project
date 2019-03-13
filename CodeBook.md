@@ -94,9 +94,9 @@ AA -- cbind --> E
 ```
  - Every variable is renamed and we get a table with this header where "...features..." resumes every feature.
  
-| subject | activity || ..features..|
-|--|--|--|--|--|
-| 2 | 1 || ..0.92354.. |
+| subject | activity | ..features..|
+|--|--|--|
+| 2 | 1 | ..0.92354.. |
  - The same is done with the training data set:
 
 ```mermaid
@@ -127,20 +127,6 @@ Now we get a data table with this shape:
 |--|--|--|--|
 | 2 | 1 | ..-0.92354.. | test | 
 | 1 | 3 | ..0.82654.. | training |
-### Tidying data
-```mermaid
-graph LR
-A[Square Rect] -- Link text --> B((Circle))
-A --> C(Round Rect)
-B --> D{Rhombus}
-C --> D
-```
-Now we get a data table with this shape:
-| subject | activity || ..features.. || set |
-|--|--|--|--|--|--|
-| 2 | 1 || ..-0.92354.. || test |
-|  |  |  | 
-| 1 | 3 || ..0.82654.. || training |
 ### Tidying data
 ```mermaid
 graph LR
