@@ -1,4 +1,6 @@
 # Code Book
+
+## Variable description
 | Field Name | Possible values | Description |
 |--|--|--|
 | set | training | set of volunteers selected for training data | ----
@@ -58,4 +60,73 @@
 | | tGravityAccZ | time domain gravity signal from accelerometer
 | measuretype | mean | mean
 | | standarddeviation | standard deviation
-| avg | "any numeric" | average value
+| avg | "any numeric" | average value | 
+
+## Data transformations
+
+The original data came from [this link](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip).
+Then it was transformed using [this script](https://github.com/Mitridathes/Getting-and-Cleaning-Data-Course-Project/blob/master/run_analysis.R)
+
+The original data set was divided into diferent <code>.txt</code> files, so the script mentioned before is necessary in terms of
+getting tidy data.
+
+What that script does is:
+### Downloading, unzipping and installing packages
+ - Creates a new "data" direcrory in the working directory and  download and unzip the original data set.
+ - If they werent installed before, it will install the dplyr, tidyr or readr packages. 
+### Reading the data
+As it was said before, the dataset is divided into different <code>.txt</code> files. 
+ - Reads `features.txt` which has the name of every variable measured. It will be considered as the `colNames()` of `X_test.txt` and `X_train.txt`.
+```mermaid
+graph LR
+A[features.txt] -- read.table --> AA(features)
+```
+
+ - Reads the data coming from the "test" set of volunteers and joins it into the same table: 
+
+ 
+```mermaid
+graph LR
+B[subject_test.txt] -- read.csv --> BB(subject_test)
+C[y_test.txt] -- read.csv --> CC(y_test)
+A[X_test.txt] -- read.table --> AA(x_test)
+BB -- cbind --> E(test_data)
+CC -- cbind --> E
+AA -- cbind --> E
+```
+
+ - Every variable is renamed and we get a table with this header where "...features..." resumes every feature.
+
+| subject | activity || ..features..|
+|--|--|--|--|--|
+| 2 | 1 || ..0.92354..
+ - The same is done with the training data set:
+```mermaid
+graph LR
+B[subject_training.txt] -- read.csv --> BB(subject_training)
+C[y_training.txt] -- read.csv --> CC(y_training)
+A[X_training.txt] -- read.table --> AA(x_training)
+BB -- cbind --> E(training_data)
+CC -- cbind --> E
+AA -- cbind --> E
+```
+### Joining "training" and "test" data sets
+ Before joining both tata tables is necessary to create a new variable that differentiates wether the data comes from "test" or "training":
+
+| subject | activity || ..features.. || set
+|--|--|--|--|--|--|
+| 2 | 1 || ..-0.92354.. || test
+Once `test_data` and `training_data` have the new set column indicating where the data belongs we can join them:
+```mermaid
+graph LR
+A(test_data)--function call-->C((rbind))
+B(training_data)--function call-->C
+C-->D(merged_data)
+```
+Now we get a data table with this shape:
+| subject | activity || ..features.. || set
+|--|--|--|--|--|--|
+| 2 | 1 || ..-0.92354.. || test
+|  |  |  | 
+| 1 | 3 || ..0.82654.. || training
+### Tidying data
