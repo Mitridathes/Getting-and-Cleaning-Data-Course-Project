@@ -137,7 +137,6 @@ experimental$feature <- gsub("mean|std", "", experimental$feature)
 # </tidying data>
 tidy_data <- experimental
 rm(experimental, features, merged_data, activity_labels, columnnames, counter, i, indx, means_vect, rep, URL)
-View(tidy_data)
 
 # PART 2: SUMARISING DATA
 
@@ -146,7 +145,6 @@ avg_data <- tidy_data %>%
         summarise(avg = mean(measure))
 View(avg_data)
 
-# Part 3: Writing data sets
+# Part 3: Writing data set
 
 write.table(avg_data, "./data/course_project_tidy_data_set.txt", row.names = FALSE )
-
