@@ -93,10 +93,12 @@ CC -- cbind --> E
 AA -- cbind --> E
 ```
  - Every variable is renamed and we get a table with this header where "...features..." resumes every feature.
+ 
 | subject | activity || ..features..|
 |--|--|--|--|--|
 | 2 | 1 || ..0.92354.. |
  - The same is done with the training data set:
+
 ```mermaid
 graph LR
 B[subject_training.txt] -- read.csv --> BB(subject_training)
@@ -112,6 +114,7 @@ AA -- cbind --> E
 | subject | activity || ..features.. || set |
 |--|--|--|--|--|--|
 | 2 | 1 || ..-0.92354.. || test |
+
 Once `test_data` and `training_data` have the new set column indicating where the data belongs we can join them:
 ```mermaid
 graph LR
@@ -132,3 +135,4 @@ A[Square Rect] -- Link text --> B((Circle))
 A --> C(Round Rect)
 B --> D{Rhombus}
 C --> D
+```
