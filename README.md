@@ -3,8 +3,8 @@ Final "Getting and Cleaning Data" course project.
 
 ## My project files
 
-1.- [run_analysis.R](https://github.com/Mitridathes/Getting-and-Cleaning-Data-Course-Project/blob/master/run_analysis.R)
-2.- [CodeBook.md](https://github.com/Mitridathes/Getting-and-Cleaning-Data-Course-Project/edit/master/Codebook.md)
+*1.- [run_analysis.R](https://github.com/Mitridathes/Getting-and-Cleaning-Data-Course-Project/blob/master/run_analysis.R)
+*2.- [CodeBook.md](https://github.com/Mitridathes/Getting-and-Cleaning-Data-Course-Project/edit/master/Codebook.md)
 
 ## Project statement
 
