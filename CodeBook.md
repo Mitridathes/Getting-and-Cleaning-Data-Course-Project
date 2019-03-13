@@ -123,6 +123,20 @@ B(training_data)--function call-->C
 C-->D(merged_data)
 ```
 Now we get a data table with this shape:
+|subject| activity | ..features.. | set |
+|--|--|--|--|
+| 2 | 1 | ..-0.92354.. | test|
+| 1 | 3 | ..0.82654.. | training |
+
+### Tidying data
+```mermaid
+graph LR
+A[Square Rect] -- Link text --> B((Circle))
+A --> C(Round Rect)
+B --> D{Rhombus}
+C --> D
+```
+Now we get a data table with this shape:
 | subject | activity | ..features.. | set |
 |--|--|--|--|
 | 2 | 1 | ..-0.92354.. | test | 
