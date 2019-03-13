@@ -6,6 +6,12 @@ Final "Getting and Cleaning Data" course project.
 * [run_analysis.R](https://github.com/Mitridathes/Getting-and-Cleaning-Data-Course-Project/blob/master/run_analysis.R)
 * [CodeBook.md](https://github.com/Mitridathes/Getting-and-Cleaning-Data-Course-Project/edit/master/Codebook.md)
 
+### Note:
+
+As I don't wnow which name might the correctors of my project have used, I've scripted all the download of the files so it automatically downloads all necessary files from the statement's URL and then it installs all R packages I used if necessary.
+
+The script creates a directory named "data" in your working directory that you can erase after running the code if you want.
+
 ## Project statement
 
 The purpose of this project is to demonstrate your ability to collect, work with, and clean a data set.
