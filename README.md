@@ -4,7 +4,7 @@ Final "Getting and Cleaning Data" course project.
 ## My project files
 
 * [run_analysis.R](https://github.com/Mitridathes/Getting-and-Cleaning-Data-Course-Project/blob/master/run_analysis.R)
-* [CodeBook.md](https://github.com/Mitridathes/Getting-and-Cleaning-Data-Course-Project/edit/master/Codebook.md)
+* [CodeBook.md](https://github.com/Mitridathes/Getting-and-Cleaning-Data-Course-Project/blob/master/Codebook.md)
 
 ### Note:
 
