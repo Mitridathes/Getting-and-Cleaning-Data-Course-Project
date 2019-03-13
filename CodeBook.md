@@ -198,5 +198,5 @@ It was solving just using `dplyr::summarise` returning a result like this:
 
 | subject | activity | set | feature | measuretype | average|
 |--|--|--|--|--|--|
-| 1 | walking | test | fBodyAccJerkX | -0.82354 | mean |
-| 1 | walking | test | fBodyAccJerkX | -0.91562 | standarddeviation |
+| 1 | walking | test | fBodyAccJerkX | mean | -0.82354 |
+| 1 | walking | test | fBodyAccJerkX | standarddeviation | -0.91562 |
