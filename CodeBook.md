@@ -83,8 +83,6 @@ A[features.txt] -- read.table --> AA(features)
 ```
 
  - Reads the data coming from the "test" set of volunteers and joins it into the same table: 
-
- 
 ```mermaid
 graph LR
 B[subject_test.txt] -- read.csv --> BB(subject_test)
@@ -94,9 +92,7 @@ BB -- cbind --> E(test_data)
 CC -- cbind --> E
 AA -- cbind --> E
 ```
-
  - Every variable is renamed and we get a table with this header where "...features..." resumes every feature.
-
 | subject | activity || ..features..|
 |--|--|--|--|--|
 | 2 | 1 || ..0.92354.. |
@@ -136,4 +132,3 @@ A[Square Rect] -- Link text --> B((Circle))
 A --> C(Round Rect)
 B --> D{Rhombus}
 C --> D
-```
