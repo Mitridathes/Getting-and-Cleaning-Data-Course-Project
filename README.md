@@ -1,16 +1,16 @@
 # Getting-and-Cleaning-Data-Course-Project
 Final "Getting and Cleaning Data" course project.
 
+### Note:
+
+The script does not read the data from the working directory. It downloads all necessary files from the statement's URL and then it installs all R packages I used if necessary.
+
+The script creates a directory named "data" in your working directory that you can erase after running the code if you want.
+
 ## My project files
 
 * [run_analysis.R](https://github.com/Mitridathes/Getting-and-Cleaning-Data-Course-Project/blob/master/run_analysis.R)
 * [CodeBook.md](https://github.com/Mitridathes/Getting-and-Cleaning-Data-Course-Project/blob/master/Codebook.md)
-
-### Note:
-
-As I don't wnow which name might the correctors of my project have used, I've scripted all the download of the files so it automatically downloads all necessary files from the statement's URL and then it installs all R packages I used if necessary.
-
-The script creates a directory named "data" in your working directory that you can erase after running the code if you want.
 
 ## Project statement
 
