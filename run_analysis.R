@@ -148,5 +148,5 @@ View(avg_data)
 
 # Part 3: Writing data sets
 
-write.table(avg_data, "./data/course_project_tidy_data_set", row.names = FALSE )
+write.table(avg_data, "./data/course_project_tidy_data_set.txt", row.names = FALSE )
 
