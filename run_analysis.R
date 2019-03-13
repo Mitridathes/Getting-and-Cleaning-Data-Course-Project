@@ -148,5 +148,5 @@ View(avg_data)
 
 # Part 3: Writing data sets
 
-write.csv(tidy_data, "./data/Week3Assignment_Tidy_Data.csv", row.names = FALSE)
-write.csv(avg_data, "./data/Week3Assignment_Avg_Data.csv", row.names = FALSE)
+write.table(avg_data, "./data/course_project_tidy_data_set", row.names = FALSE )
+
