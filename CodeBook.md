@@ -146,7 +146,9 @@ Taking a look at the data set it could be said that there are only 4 variables, 
 
 This part is important in order to be able to identify the observation to which any feature corresponds once all the features are gathered.
 
- - Next step to get tidy data is changing the values in activity by their **names** in the `activity_labels.txt` file in **lowercases**.
+ - Next step to get tidy data is changing the values in activity by their names in the `activity_labels.txt` file:
+	 1. First the script **eliminates the numbers**.
+	 2. Second change characters to lowercases.
 
 | subject | activity | ..features.. | set | observation |
 |--|--|--|--|--|
@@ -157,5 +159,44 @@ This part is important in order to be able to identify the observation to which 
 
 | subject | activity | set | observation |  feature | measure |
 |--|--|--|--|--|--|
-| 1 | walking | test | 1 | fAccmeanX | -0.92354 |
-| 1 | walking | test | 2 | fAccmeanX | -0.81562 |
+| 1 | walking | test | 1 | fBodyAccJerkmeanX | -0.92354 |
+| 1 | walking | test | 2 | fBodyAccJerkmeanX | -0.81562 |
+
+At this point the column feature stills containing **two variables***:
+
+ - The kind of signal
+ - If the measure is a mean or a standard deviation.
+
+**Note***: there are lots more of variables included in that column, but in terms of the objective of this excercise it will be decomposed only as said before.
+
+In order to create a new variable that diferentiates both measures the script creates a list using `grepl` that will find out if there is a "mean" character or not. This `TRUE` or `FALSE` list is then changed into a `"mean"` or `"standarddeviation"` list using `gsub`.
+Now this list can be added to the data set:
+
+| subject | activity | set | observation |  feature | measure | measuretype |
+|--|--|--|--|--|--|--|
+| 1 | walking | test | 1 | fBodyAccJerkmeanX | -0.92354 | mean |
+| 1 | walking | test | 2 | fBodyAccJerkmeanX | -0.81562 | mean |
+
+Next step is removing the characters "mean" and "std" with `gsub`.
+This is how it would look like:
+
+| subject | activity | set | observation |  feature | measure | measuretype |
+|--|--|--|--|--|--|--|
+| 1 | walking | test | 1 | fBodyAccJerkX | -0.92354 | mean |
+| 1 | walking | test | 2 | fBodyAccJerkX | -0.81562 | mean |
+
+## The data is tidy now
+This is why this is tidy data:
+
+1. Each variable forms a column.
+2. Each observation forms a row.
+3. Each type of observational unit forms a table.
+
+## Assignment goal
+The assignment goal was to  create a second, independent tidy data set with the average of each variable for each activity and each subject.
+It was solving just using `dplyr::summarise` returning a result like this:
+
+| subject | activity | set | feature | measuretype | average|
+|--|--|--|--|--|--|--|
+| 1 | walking | test | fBodyAccJerkX | -0.82354 | mean |
+| 1 | walking | test | fBodyAccJerkX | -0.91562 | standarddeviation |
