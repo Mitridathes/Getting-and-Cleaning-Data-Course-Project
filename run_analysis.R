@@ -118,6 +118,7 @@ merged_data <- mutate(merged_data, observation = rep)
 activity_labels <- read.csv("./data/UCI HAR Dataset/activity_labels.txt", header = FALSE, stringsAsFactors = FALSE)
 activity_labels <- sub("[1-9] ", "", activity_labels$V1)
 activity_labels <- gsub("_", " ", activity_labels)
+activity_labels <- tolower(activity_labels)
 merged_data <- mutate(merged_data, activity = activity_labels[activity])
 
 ##Gathering columns and clasifying them between mean and standarddeviation measure types:
@@ -142,7 +143,7 @@ rm(experimental, features, merged_data, activity_labels, columnnames, counter, i
 
 avg_data <- tidy_data %>% 
         group_by(set, subject, activity, feature, measuretype) %>% 
-        summarise(avg = mean(measure))
+        summarise(average = mean(measure))
 View(avg_data)
 
 # Part 3: Writing data set
